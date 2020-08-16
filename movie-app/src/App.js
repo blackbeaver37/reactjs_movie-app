@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+function Test2({ text }) {
+    return <h2>It also {text}</h2>;
+}
+
+const testList = [
+    {
+        id: 1,
+        name: "TEST1",
+        number: 1,
+    },
+    { id: 2, name: "TEST2", number: 2 },
+    { id: 3, name: "TEST3", number: 3 },
+    { id: 4, name: "TEST4", number: 4 },
+    { id: 5, name: "TEST5", number: 5 },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            {testList.map(function (number) {
+                return <Test2 key={number.id} text={number.name} />;
+            })}
+            <br></br>
+            {testList.map((number) => (
+                <Test2 key={number.id} text={number.name} />
+            ))}
+        </div>
+    );
 }
 
 export default App;
