@@ -1,3 +1,0 @@
-# Nomad ReactJS
-
-Movie App
